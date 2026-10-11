@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="pt-PT">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 
 <title>Apoio à Lista M | APAEFGA</title>
@@ -36,7 +35,7 @@ body {
 
 .header {
     background: #173f67;
-    color: #ffffff;
+    color: white;
     padding: 32px 25px;
     text-align: center;
 }
@@ -48,9 +47,9 @@ body {
 
 .header p {
     margin: 8px 0 0;
+    opacity: .95;
     font-size: 14px;
     line-height: 1.5;
-    opacity: .95;
 }
 
 .content {
@@ -64,7 +63,7 @@ body {
 
 .title h2 {
     color: #173f67;
-    margin-bottom: 7px;
+    margin: 0 0 10px;
 }
 
 .title p {
@@ -75,7 +74,6 @@ body {
 
 .lista-destaque {
     display: inline-block;
-    margin-top: 8px;
     padding: 8px 25px;
     background: #173f67;
     color: white;
@@ -83,7 +81,7 @@ body {
     font-weight: bold;
 }
 
-label {
+.field-label {
     display: block;
     font-weight: bold;
     margin: 18px 0 6px;
@@ -98,15 +96,15 @@ select {
     border: 1px solid #ccd5df;
     border-radius: 7px;
     font-size: 16px;
-    background: #ffffff;
+    background: white;
     color: #243447;
     color-scheme: light;
 }
 
 input:focus,
 select:focus {
-    outline: none;
-    border-color: #173f67;
+    outline: 2px solid #9db7d0;
+    outline-offset: 1px;
 }
 
 .row {
@@ -135,6 +133,7 @@ select:focus {
     align-items: flex-start;
     gap: 12px;
     margin-top: 16px;
+    cursor: pointer;
 }
 
 .checkbox input {
@@ -174,14 +173,11 @@ select:focus {
 }
 
 #signature {
-    position: absolute;
-    inset: 0;
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
     background: #ffffff !important;
     touch-action: none !important;
-    -ms-touch-action: none;
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -192,10 +188,10 @@ select:focus {
 
 .clear {
     margin-top: 12px;
+    padding: 11px 17px;
     background: #e8edf2;
     color: #243447;
     border: none;
-    padding: 11px 17px;
     border-radius: 6px;
     font-size: 14px;
     cursor: pointer;
@@ -206,12 +202,16 @@ select:focus {
     width: 100%;
     padding: 17px;
     background: #173f67;
-    color: #ffffff;
+    color: white;
     border: none;
     border-radius: 8px;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.submit:hover {
+    background: #102f4e;
 }
 
 .submit:disabled {
@@ -249,6 +249,38 @@ select:focus {
     color: #b42318;
 }
 
+/* FRASE FINAL DA LISTA M */
+
+.mensagem-final {
+    margin-top: 35px;
+    padding: 30px 25px;
+    background: #f3f7fb;
+    border-radius: 12px;
+    text-align: center;
+    border-top: 4px solid #173f67;
+}
+
+.mensagem-final .simbolo {
+    color: #173f67;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.mensagem-final p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #243447;
+    margin: 15px 0 22px;
+}
+
+.mensagem-final .assinatura-lista {
+    font-weight: bold;
+    font-size: 15px;
+    color: #173f67;
+    letter-spacing: .3px;
+}
+
 @media (max-width: 600px) {
     body {
         background: #ffffff;
@@ -275,6 +307,14 @@ select:focus {
 
     .submit {
         font-size: 16px;
+    }
+
+    .mensagem-final {
+        padding: 25px 18px;
+    }
+
+    .mensagem-final p {
+        font-size: 15px;
     }
 }
 </style>
@@ -309,7 +349,7 @@ select:focus {
 
         <form id="subscriptionForm">
 
-            <label for="nome">
+            <label class="field-label" for="nome">
                 Nome completo do associado
                 <span class="required">*</span>
             </label>
@@ -321,7 +361,7 @@ select:focus {
                 required
             >
 
-            <label for="email">
+            <label class="field-label" for="email">
                 E-mail
                 <span class="required">*</span>
             </label>
@@ -333,7 +373,7 @@ select:focus {
                 required
             >
 
-            <label for="educando">
+            <label class="field-label" for="educando">
                 Nome do educando
                 <span class="required">*</span>
             </label>
@@ -347,7 +387,7 @@ select:focus {
             <div class="row">
 
                 <div>
-                    <label for="escola">
+                    <label class="field-label" for="escola">
                         Escola
                         <span class="required">*</span>
                     </label>
@@ -384,7 +424,7 @@ select:focus {
                 </div>
 
                 <div>
-                    <label for="turma">
+                    <label class="field-label" for="turma">
                         Ano e Turma
                         <span class="required">*</span>
                     </label>
@@ -501,6 +541,29 @@ select:focus {
 
         </form>
 
+        <!-- FRASE MOTIVACIONAL -->
+
+        <div class="mensagem-final">
+
+            <div class="simbolo">“</div>
+
+            <p>
+                Porque os nossos filhos merecem
+                <strong>mais e melhor.</strong>
+                A Lista M assume o compromisso de trabalhar
+                por uma escola onde
+                <strong>cada criança conta, cada família
+                tem voz e cada futuro importa.</strong>
+            </p>
+
+            <div class="assinatura-lista">
+                LISTA M
+                <br>
+                Pelos nossos filhos. Pelo futuro de todos.
+            </div>
+
+        </div>
+
         <div class="privacy">
             Os dados recolhidos através deste formulário
             destinam-se exclusivamente à recolha, organização
@@ -513,17 +576,17 @@ select:focus {
 
 <script>
 
-/* ======================================
-   COLOCAR AQUI O NOVO URL DO APPS SCRIPT
-====================================== */
+/* =========================================
+   NOVO GOOGLE APPS SCRIPT
+========================================= */
 
 const SCRIPT_URL =
-    "COLOCA_AQUI_O_NOVO_URL_TERMINADO_EM_EXEC";
+"https://script.google.com/macros/s/AKfycbzb9j0_cDlNRpV7NXa53ah7rodbmSVdnzC2t-72cQGlYlGC_CwYIMG2zztPSChs50clLQ/exec";
 
 
-/* ======================================
+/* =========================================
    ASSINATURA
-====================================== */
+========================================= */
 
 const canvas = document.getElementById("signature");
 const ctx = canvas.getContext("2d");
@@ -584,11 +647,6 @@ function beginStroke(clientX, clientY) {
     drawing = true;
 
     ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-
-    // Um toque isolado também produz um ponto visível.
-    ctx.fillStyle = "#000000";
-    ctx.beginPath();
     ctx.arc(pos.x, pos.y, 1.5, 0, Math.PI * 2);
     ctx.fill();
 
@@ -616,9 +674,7 @@ function endStroke() {
 }
 
 
-/* ======================================
-   NAVEGADORES COM POINTER EVENTS
-====================================== */
+/* POINTER EVENTS */
 
 if (supportsPointerEvents) {
 
@@ -626,7 +682,10 @@ if (supportsPointerEvents) {
 
         if (activePointerId !== null) return;
 
-        if (event.pointerType === "mouse" && event.button !== 0) {
+        if (
+            event.pointerType === "mouse" &&
+            event.button !== 0
+        ) {
             return;
         }
 
@@ -680,9 +739,7 @@ if (supportsPointerEvents) {
 }
 
 
-/* ======================================
-   FALLBACK PARA NAVEGADORES ANTIGOS
-====================================== */
+/* FALLBACK PARA NAVEGADORES ANTIGOS */
 
 else {
 
@@ -748,6 +805,7 @@ else {
         if (event.button !== 0) return;
 
         event.preventDefault();
+
         beginStroke(event.clientX, event.clientY);
 
     });
@@ -767,9 +825,9 @@ else {
 }
 
 
-/* ======================================
+/* =========================================
    LIMPAR ASSINATURA
-====================================== */
+========================================= */
 
 function clearSignature() {
 
@@ -789,9 +847,9 @@ document.getElementById("clearButton")
 setupCanvas();
 
 
-/* ======================================
-   IDENTIFICADOR DO APOIO
-====================================== */
+/* =========================================
+   IDENTIFICADOR ÚNICO
+========================================= */
 
 function createID() {
 
@@ -826,9 +884,9 @@ function createID() {
 }
 
 
-/* ======================================
-   ENVIO DO FORMULÁRIO
-====================================== */
+/* =========================================
+   ENVIO PARA GOOGLE APPS SCRIPT
+========================================= */
 
 document.getElementById("subscriptionForm")
     .addEventListener("submit", async function(event) {
@@ -848,17 +906,12 @@ document.getElementById("subscriptionForm")
             "É necessário assinar antes de enviar o apoio.";
 
         error.style.display = "block";
-        error.scrollIntoView({ behavior: "smooth", block: "center" });
 
-        return;
-    }
+        error.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
-    if (!SCRIPT_URL.startsWith("https://script.google.com/macros/s/")) {
-
-        error.textContent =
-            "O formulário ainda não está ligado ao novo Apps Script.";
-
-        error.style.display = "block";
         return;
     }
 
